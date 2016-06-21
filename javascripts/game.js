@@ -2,7 +2,7 @@ let userSelection = "";
 let compSelection ="";
 let answer = "";
 
-getInput(input) => {
+const getInput= (input) => {
   userSelection = input;
   compInput();
   compare(userSelection, compSelection);
@@ -11,7 +11,7 @@ getInput(input) => {
   userOutput();
 }
 
-compInput() => {
+const compInput= () => {
   compSelection = Math.random();
   if (compSelection < 0.34) {
     compSelection = "Rock";
@@ -22,7 +22,7 @@ compInput() => {
   }
 }
 
-compare(selection1, selection2) => {
+const compare = (selection1, selection2) => {
 
   if(selection1 === selection2) {
     answer = "Its a tie!";
@@ -39,17 +39,17 @@ compare(selection1, selection2) => {
   return answer
 }
 
-compOutput() => {
+const compOutput = () => {
   let compOutput = document.getElementById("comp_output");
   compOutput.innerHTML = "Computer chose: " + compSelection;
 }
 
-userOutput() => {
+const userOutput = () => {
   let yourOutput = document.getElementById("user_output");
   yourOutput.innerHTML = "You Chose: " + userSelection;
 }
 
-winner() => {
+const winner = () => {
   let output = document.getElementById("output");
   output.innerHTML = answer;
 }
